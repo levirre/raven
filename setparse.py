@@ -41,8 +41,6 @@ import hashlib
 
 #URL_SOURCE= ""
 #SET = ""
-#curl $URL_SOURCE | grep '{{CardList*|' | sed 's/{{CardList|//;s/..$//;s/ /_/g' | tr '/' '-' > $SET.txt  
-
 #curl $URL_SOURCE | grep '{{CardList*' | sed 's/{{CardList*|//;s/..$//;s/ /_/g' | tr '/' '-' | cut -d "|" -f 2-
 
 #bash = ["touch ", set_name]
