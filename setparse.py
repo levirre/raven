@@ -3,6 +3,7 @@ import os
 import sys
 import subprocess
 import time
+import hashlib
 #sed 's/regex//' match regex 's/regex//;s/regex//;'multiple matches
 #Card No.|Name|Grade|Nation|Type|Rarity
 #curl https://cardfight.fandom.com/wiki/D_Booster_Set_01:_Genesis_of_the_Five_Greats?action=edit | grep '{{CardList|D-BT*' | sed 's/{{CardList|//;s/..$//;s/ /_/g' | awk -F'|' 'BEGIN{OFS=FS} {if ($2) gsub(/ /,"_")} {if(val=="") print{"empty"}} {print $0}' | tr '/' '-' > D-BT01.txt
@@ -14,23 +15,12 @@ import time
 #$6 = Card rarity
 
 #D-BT[num].txt
-
-
 #Create url from $2
 # awk -F'|' '{print $2}' D-BT01.txt | sed 's/ /_/g'  replace spaces with _
 # awk -F'|' '{print $1}' D-BT01.txt | tr '/' '-'  
-
-
-
 #D-BT01-001EN-RRR_(Sample).png md5hash this to get sub directory for url
-
 #example url #https://static.wikia.nocookie.net/cardfight/images/8/80/D-BT01-001EN-RRR_%28Sample%29.png
-
-import hashlib
 #card_string = "D-BT01-001EN-RRR_(Sample).png"
-
-
-
 
 #print(url)
 #curl -o 'D-BT01-001EN-RRR_(Sample).png' 'https://static.wikia.nocookie.net/cardfight/images/8/80/D-BT01-001EN-RRR_%28Sample%29.png'
